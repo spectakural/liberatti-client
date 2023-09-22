@@ -1,0 +1,29 @@
+.navbar{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    // border: 1px solid red;
+    width: 100%;
+    .navbar-logo{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+        font-size: 1.3rem;
+        // border: 1px solid red;
+    }
+    .navbar-links{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        // border: 1px solid red;
+        
+        li{
+            padding: 0 10px;
+            list-style-type: none;
+            // border: 1px solid red;
+        }
+    }
+}

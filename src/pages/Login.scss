@@ -1,0 +1,14 @@
+.login-form{
+    form{
+        display: flex;
+        flex-direction: column;
+        // border: 1px solid red;
+        width: 240px;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+    a{
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+}
