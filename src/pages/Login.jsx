@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Navbar } from '../components/navbar'
 import './Login.scss'
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from 'firebase/auth';
