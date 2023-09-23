@@ -7,5 +7,33 @@
 .home-container{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    align-items: center;
+    background-color: #eee;
+    color: #232323;
+    // border: 1px solid red;
+}
+
+.summa-box{
+    height: 200px;
+    width: 100px;
+    background-color: aqua;
+    overflow: hidden;
+    transition: all 1s ease-in-out;   
+
+    &:before{
+            content: '';
+            position:absolute;
+
+            width: 100px;
+            height: 200px;
+            clip-path: circle(50px at 50% 50%);
+            background-color: #9bdc28;
+            transition: all 1s ease-in-out;    
+        }
+    &:hover::before{
+            clip-path: circle(100px at 50% 50%);
+        }
+    &:hover{
+        background-color: blue;
+    }
 }

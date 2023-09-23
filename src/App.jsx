@@ -12,12 +12,12 @@ import { Routes, Route } from "react-router-dom";
 function App() {
   const [user] = useAuthState(auth)
   const [data, setData] = useState(null)
-  useEffect(() => {
-    fetch("http://localhost:3001/api")
-      .then((res) => res.json())
-      .then((data) => setData(data.message))
-      .then(console.log("Hello, The api accessed successfully!"));
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost:3001/api")
+  //     .then((res) => res.json())
+  //     .then((data) => setData(data.message))
+  //     .then(console.log("Hello, The api accessed successfully!"));
+  // }, []);
 
   return (
     <div className="app">

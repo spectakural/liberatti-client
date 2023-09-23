@@ -1,4 +1,5 @@
 import React from 'react'
+import "./ProductCard.scss"
 
 export const ProductCard = () => {
   return (
@@ -8,8 +9,9 @@ export const ProductCard = () => {
         </div>
         <div className="product-info">
             <h3>Product Name</h3>
-            <p>Product Description</p>
-            <p>Product Price</p>
+            <p>Author</p>
+            <p>Availability</p>
+            <button onClick={()=>console.log("Button Pressed!")}>Add to cart</button>
         </div>
     </div>
   )
