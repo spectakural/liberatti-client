@@ -1,0 +1,27 @@
+.filter-container{
+    flex: 1;
+    align-self: flex-start;
+    // height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    margin: 10px;
+    // border: 1px solid green;
+    // background-color: white;
+    // border-right: 2px solid black;
+
+    .genres{
+        margin-bottom: 30px;
+    }
+
+    .multiSelectContainer{
+        background-color: white;
+    }
+
+    input{
+        background-color: white;
+        padding: 0;
+    }
+
+}

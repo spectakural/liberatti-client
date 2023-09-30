@@ -3,6 +3,7 @@ import './Navbar.scss'
 import {Link} from 'react-router-dom'
 import { Home } from '../pages/Home'
 import { Login } from '../pages/Login'
+import { FaUser,FaShoppingCart } from "react-icons/fa";
 
 export const Navbar = () => {
   return (
@@ -10,11 +11,12 @@ export const Navbar = () => {
         <div className="navbar-logo">
             <span>Liberatti</span>
         </div>
-        <ul className='navbar-links'>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/cart">Cart</Link></li>
-            <li><Link to='/login'>Login</Link></li>
+        <ul className='navbar-search'>
+            <input type="text" placeholder='Search books'/>
+        </ul>
+        <ul className='navbar-icons'>
+          <li><Link to="/cart"><FaShoppingCart /></Link></li>
+          <li><Link to="/login"><FaUser /></Link></li>
         </ul>
     </div>
   )

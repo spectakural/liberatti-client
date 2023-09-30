@@ -1,19 +1,23 @@
 .products-container{
+    flex: 4;
     display: flex;
     flex-direction: column;
+    border-left: 1px solid grey;
+    padding: 20px;
+    margin: 10px;
     // width: 60%;
-    border: 1px solid red;
+    // border: 1px solid red;
     h2{
         // border: 1px solid red;
         text-align: center;
         align-items: flex-start;
     }
     .card-container{
-        border: 1px solid red;
+        // border: 1px solid red;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin-left: 20rem;
+        // margin-left: 20rem;
         margin-top: 2rem;
         // z-index: -2;
         .card {

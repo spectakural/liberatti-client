@@ -6,11 +6,12 @@
 
 .home-container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     background-color: #eee;
     color: #232323;
     // border: 1px solid red;
+    // background-image: url("../static/bg1.jpg");
 }
 
 .summa-box{
