@@ -1,5 +1,6 @@
 .products-container{
     flex: 4;
+    align-self: flex-start;
     display: flex;
     flex-direction: column;
     border-left: 1px solid grey;
@@ -7,6 +8,17 @@
     margin: 10px;
     // width: 60%;
     // border: 1px solid red;
+    .sort-container{
+        display: flex;
+        justify-content: space-between;
+        .sort-menu{
+            display: flex;
+            align-items: center;
+            span{
+                margin-right: 10px;
+            }
+        }
+    }
     h2{
         // border: 1px solid red;
         text-align: center;

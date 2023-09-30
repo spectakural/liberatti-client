@@ -4,39 +4,52 @@ import { ProductCard } from './ProductCard'
 import axios from 'axios'
 import Multiselect from 'multiselect-react-dropdown'
 
-export const Products = () => {
+export const Products = ({books}) => {
 
-  const [books, setBooks] = useState([])
+  const [viewBooks, setViewBooks] = useState([])
   const options = [
-    {type:"Ascending", category:""}
+    {type:"Ascending", id:1},
+    {type:"Descending", id:2}
   ]
-  async function fetchProducts(){
-    await axios.get('http://localhost:3001/books')
-      .then((resp) => {setBooks(resp.data)})
-      .catch((error)=>{
-        console.log(error.message)
-      })
-  }
 
-  useEffect(()=>{
-    fetchProducts()
-  },[])
+  useEffect(() => {
+    setViewBooks([...books])
+  }, [books])
+  
+  
+
+  const sort = (list, item) => {
+    // console.log(books)
+    if (item.type === "Descending")
+      setViewBooks([...books].reverse())
+    else
+      setViewBooks([...books])
+    console.log("Books order reversed!")
+    // console.log(books)
+  }
 
   return (
     <div className="products-container">
         {/* <h2>Books to shop</h2> */}
         <div className="sort-container">
           <div className="result-number">
-            <p>Showing 1290 results</p>
+            <p>Showing {books.length} results</p>
           </div>
 
           <div className="sort-menu">
-            <Multiselect />
+            <span>Sort by: </span>
+            <Multiselect 
+              options={options}
+              displayValue='type'
+              singleSelect={true}
+              selectedValues={[options[0]]}
+              onSelect={sort}
+            />
           </div>
 
         </div>
         <div className="card-container">
-            {books.map((book)=>(
+            {viewBooks.map((book)=>(
               <ProductCard book={book} key={book.bookid}/>
             ))}
         </div>
