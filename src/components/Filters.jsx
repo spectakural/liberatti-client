@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react'
 import Multiselect from 'multiselect-react-dropdown'
 import "./Filters.scss"
 
-export const Filters = ({books, setAuthorFilter, setYearFilter, authorFilter, yearFilter}) => {
+export const Filters = ({books, setAuthorFilter, setYearFilter, authorFilter, yearFilter, authorList, yearList}) => {
 
-    const authors = Array.from(new Set(books.map((book)=>{return book.author.slice(1,-1)}))).map(author =>{
-        return {author:author}
-    }).sort((a,b)=>(a.author > b.author) ? 1:-1)
+    // const authors = Array.from(new Set(books.map((book)=>{return book.author.slice(1,-1)}))).map(author =>{
+    //     return {author:author}
+    // }).sort((a,b)=>(a.author > b.author) ? 1:-1)
 
 
-    const pubYears = Array.from(new Set(books.map(book => {return book.yearofpub}).sort())).map(year => {return {year:year}})
+    // const pubYears = Array.from(new Set(books.map(book => {return book.yearofpub}).sort())).map(year => {return {year:year}})
     
     useEffect(()=>{
         console.log("Year/Author changed")
@@ -24,7 +24,7 @@ export const Filters = ({books, setAuthorFilter, setYearFilter, authorFilter, ye
             <div className="author">
                 <h3>Author</h3>
                 <Multiselect 
-                    options={authors}
+                    options={authorList}
                     displayValue='author'
                     onSelect={(list, item)=>{
                         setAuthorFilter([...list.map((author)=>{return author.author})])
@@ -37,7 +37,7 @@ export const Filters = ({books, setAuthorFilter, setYearFilter, authorFilter, ye
             <div className="year">
                 <h3>Year of Publication</h3>
                 <Multiselect 
-                    options={pubYears}
+                    options={yearList}
                     displayValue='year'
                     onSelect={(list, item)=>{
                         setYearFilter([...list.map((year)=>{return year.year})])

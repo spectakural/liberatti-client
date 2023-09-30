@@ -65,7 +65,7 @@ export const Home = () => {
         {/* <h1>Liberatti</h1> */}
         {/* <div className="summa-box"></div> */}
         {/* <Sidebar></Sidebar> */}
-        <Filters books={viewBooks} setAuthorFilter={setAuthorFilter} setYearFilter={setYearFilter} authorFilter = {authorFilter} yearFilter = {yearFilter}></Filters>
+        <Filters books={viewBooks} setAuthorFilter={setAuthorFilter} setYearFilter={setYearFilter} authorFilter = {authorFilter} yearFilter = {yearFilter} authorList={Array.from(new Set(books.map((book)=>{return book.author.slice(1,-1)}))).map(author =>{return {author:author}}).sort((a,b)=>(a.author > b.author) ? 1:-1)} yearList={Array.from(new Set(books.map(book => {return book.yearofpub}).sort())).map(year => {return {year:year}})}></Filters>
         <Products books={viewBooks}></Products>
     </div>
   )
