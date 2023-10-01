@@ -8,7 +8,7 @@ import { auth } from '../firebase'
 import { Filters } from '../components/Filters'
 import axios from 'axios'
 
-export const Home = () => {
+export const Home = ({search}) => {
   const [user] = useAuthState(auth)
 
   const [books, setBooks] = useState([])
@@ -28,6 +28,11 @@ export const Home = () => {
   useEffect(()=>{
     setViewBooks([...books])
   },[books])
+
+  useEffect(()=>{
+    setViewBooks([...books.filter((book)=>{return (book.name.toLowerCase().includes(search.toLowerCase())) ? true:false || (book.author.toLowerCase().includes(search.toLowerCase())) ? true:false || (book.yearofpub.toString().includes(search)) ? true:false})])
+    console.log("search changed to - <"+search+">")
+  },[search])
 
   useEffect(()=>{
     // console.log("year/author changed - from Home.jsx")

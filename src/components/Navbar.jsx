@@ -5,14 +5,19 @@ import { Home } from '../pages/Home'
 import { Login } from '../pages/Login'
 import { FaUser,FaShoppingCart } from "react-icons/fa";
 
-export const Navbar = () => {
+export const Navbar = ({setSearch}) => {
+
+  const handleSearch = (s) => {
+    setSearch(s)
+  }
+
   return (
     <div className="navbar">
         <div className="navbar-logo">
-            <span>Liberatti</span>
+            <Link to="/">Liberatti</Link>
         </div>
         <ul className='navbar-search'>
-            <input type="text" placeholder='Search books'/>
+            <input type="text" placeholder='Search books' onChange={(e) => {handleSearch(e.target.value)}}/>
         </ul>
         <ul className='navbar-icons'>
           <li><Link to="/cart"><FaShoppingCart /></Link></li>
