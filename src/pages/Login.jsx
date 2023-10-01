@@ -29,16 +29,29 @@ export const Login = () => {
 
     return (
         <div className="login-container">
-            <h1>Login</h1>
+            <div className="login-side-frame">
+                {/* <img src="./src/static/bg2.png" alt="background picture" id='login-bg-img'/> */}
+                <div id="login-book-img">
+                    <img src="./src/static/OJK9411.png" alt="background picture"/>
+                    <span>Rent books at cheapest subscription today!</span>
+                </div>
+            </div>
             <div className="login-form">
-                <form action="">
-                    <label htmlFor="email">E-mail</label>
-                    <input type="text" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    <label htmlFor="password">Password</label>
-                    <input type="password" name="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                    <button onClick={handleLogin}>Login</button>
-                </form>
-                <Link to="/register" >Register now</Link>
+                <div className="login-box">
+                    <h3>User Login</h3>
+                    <form action="">
+                        <div className="login-input-box">
+                            <input type="text" name="email" id="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+                            <span>Email</span>
+                        </div>
+                        <div className="login-input-box">
+                            <input type="password" name="password" id="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+                            <span>Password</span>
+                        </div>
+                        <button onClick={handleLogin}>Login</button>
+                    </form>
+                    <Link to="/register" >Register now</Link>
+                </div>
             </div>
         </div>
     )

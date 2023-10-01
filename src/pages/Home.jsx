@@ -38,17 +38,17 @@ export const Home = ({search}) => {
     // console.log("year/author changed - from Home.jsx")
     if(authorFilter.length>0 || yearFilter.length>0){
       if(authorFilter.length == 0){
-        setViewBooks([...books.filter((book)=>{
+        setViewBooks([...viewBooks.filter((book)=>{
           return yearFilter.includes(book.yearofpub)
         })])
         console.log("Book list changed!")
       }else if(yearFilter.length == 0){
-        setViewBooks([...books.filter((book)=>{
+        setViewBooks([...viewBooks.filter((book)=>{
           return authorFilter.includes(book.author.slice(1,-1))
         })])
         console.log("Book list changed!")
       }else{
-        setViewBooks([...books.filter((book)=>{
+        setViewBooks([...viewBooks.filter((book)=>{
           return authorFilter.includes(book.author.slice(1,-1)) && yearFilter.includes(book.yearofpub)
         })])
         console.log("Book list changed!")

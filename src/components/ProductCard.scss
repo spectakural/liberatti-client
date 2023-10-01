@@ -1,3 +1,11 @@
+/* Color Theme Swatches in Hex */
+$hex1: #A67968;
+$hex2: #D9AB9A30;
+$hex3: #402721;
+$hex4: #D95252;
+$hex5: #733232;
+$hex6: #ddbcb0;
+
 .product-card{
     margin: 20px;
     padding: 15px;
@@ -11,6 +19,7 @@
     font-size: 12px;
     text-align: center;
     width: 200px;
+    transition: 1s ease-in-out;
     .product-image{
         margin: 0;
         padding: 0;
@@ -45,6 +54,7 @@
             opacity: 0;
             visibility: hidden;
             border-radius: 0;
+            background-color: $hex5;
             transition: 0.5s ease-in-out;
             &:hover{
                 cursor: pointer;

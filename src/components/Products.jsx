@@ -44,6 +44,7 @@ export const Products = ({books}) => {
               singleSelect={true}
               selectedValues={[options[0]]}
               onSelect={sort}
+              avoidHighlightFirstOption={true}
             />
           </div>
 

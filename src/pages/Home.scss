@@ -1,3 +1,5 @@
+$hex2: #D9AB9A30;
+
 *{
     margin: 0;
     padding: 0;
@@ -9,7 +11,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: #eee;
+    background-color: $hex2;
     color: #232323;
     // border: 1px solid red;
     // background-image: url("../static/bg1.jpg");

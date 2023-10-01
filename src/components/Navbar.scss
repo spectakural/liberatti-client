@@ -1,3 +1,6 @@
+$hex5: #733232;
+$hex1: #A67968;
+
 @font-face{
     font-family: 'Auge-Trial';
     src: url('../static/Auge-Trial-Bold.otf')
@@ -8,7 +11,9 @@
 
 .navbar{
     display: flex;
+    background-color: $hex5;
     // padding: 10px;
+    border-bottom: 1px solid #ffffff50;
     justify-content: space-around;
     align-items: center;
     // border: 1px solid red;
@@ -33,6 +38,20 @@
             text-align: center;
             border-radius: 5px;
             border: none;
+            background-color: $hex1;
+            color: black;
+            transition: .2s ease-in-out;
+
+            &:focus{
+                border: none;
+                outline: none;
+                transform: scale(1.1);
+                box-shadow: 0px 5px 10px #111111aa, 1px 0px 10px #111111aa;
+            }
+
+            &::placeholder{
+                color: #333;
+            }
         }
     }
 
