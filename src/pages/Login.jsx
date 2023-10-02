@@ -1,29 +1,42 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Login.scss'
 import { Link, useNavigate } from "react-router-dom";
+import { useAuthState } from 'react-firebase-hooks/auth'
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
 
 export const Login = () => {
 
     const navigate = useNavigate()
+    const [user] = useAuthState(auth)
+
+    useEffect(()=>{
+        if(user){
+            navigate("/user-home")
+        }
+    },[user])
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const handleLogin = (e) => {
         e.preventDefault();
-        signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            // Signed in
-            const user = userCredential.user;
-            navigate("/user-home")
-            console.log(user);
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorCode, errorMessage)
-        });
+        if(!user){
+            signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                navigate("/user-home")
+                console.log(user);
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode, errorMessage)
+            });
+        }else{
+            navigate('/user-home')
+        }
        
     }
 
