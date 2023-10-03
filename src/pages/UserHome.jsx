@@ -42,7 +42,7 @@ export const UserHome = ({userDetails}) => {
         <div className="user-home-wrapper">
             {/* <h1>{!user ? "No access" : user.email}</h1> */}
             <div className="user-home-container">
-                <span>Welcome back, <span className='user-home-container-name'>{userDetails[0].name}</span></span>
+                <span>Welcome back, <span className='user-home-container-name'>{userDetails.length>0? userDetails[0].name:"Loading..."}</span></span>
                 <div className="user-home-options">
                     <button onClick={ handleMembership }>Buy Membership</button>
                     <button onClick={ () => navigate("/cart") }>Your Cart</button>

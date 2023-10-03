@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Home.scss'
-import { ProductCard } from '../components/ProductCard'
 import { Products } from '../components/Products'
-import { Sidebar } from '../Sidebar/Sidebar'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from '../firebase'
 import { Filters } from '../components/Filters'
@@ -18,7 +16,8 @@ export const Home = ({search}) => {
 
   
   async function fetchProducts(){
-    await axios.get('http://localhost:3001/books')
+    // await axios.get('http://localhost:3001/books')
+    await axios.get('https://liberatti-server.vercel.app/books')
     .then((resp) => {setBooks(resp.data)})
     .catch((error)=>{
       console.log(error.message)

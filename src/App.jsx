@@ -7,6 +7,7 @@ import { Navbar } from './components/Navbar'
 import { Login } from './pages/Login'
 import { Register } from './pages/Register'
 import { UserHome } from './pages/UserHome'
+import { Cart } from './pages/Cart'
 import { Routes, Route } from "react-router-dom"
 import axios from 'axios'
 
@@ -17,7 +18,8 @@ function App() {
 
   useEffect(()=>{
     if(user){
-      axios.get("http://localhost:3001/users/"+user.email)
+      // axios.get("http://localhost:3001/users/"+user.email)
+      axios.get("https://liberatti-server.vercel.app/users/"+user.email)
       .then((response)=>{
         setUserDetails(response.data)
         console.log(userDetails)
@@ -25,6 +27,9 @@ function App() {
       .catch((error)=>{
         console.log(error.message)
       })
+    }
+    else{
+      setUserDetails({})
     }
   },[user])
 
@@ -36,6 +41,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/user-home" element={<UserHome userDetails={userDetails} />}/>
+        <Route path="/cart" element={<Cart userDetails={userDetails} />} />
     </Routes>
     </div>
   )

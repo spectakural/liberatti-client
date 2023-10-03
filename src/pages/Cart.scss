@@ -1,0 +1,28 @@
+.cart-wrapper{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('../static/bgpattern1_1.jpg');
+    
+    .cart-container{
+        background-color: beige;
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        .products{
+            flex: 3;
+        }
+        .bill-info{
+            background-color: rgb(226, 205, 120);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+            padding: 20px 30px;
+            border-radius: 30px;
+
+        }
+    }
+}

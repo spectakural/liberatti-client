@@ -25,7 +25,8 @@ export const Register = () => {
         e.preventDefault()
         
         if(!user){
-            axios.post("http://localhost:3001/users",{
+            // axios.post("http://localhost:3001/users",{
+            axios.post("https://liberatti-server.vercel.app/users",{
                 name:name,
                 email:email,
                 phno:phno,
